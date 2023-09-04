@@ -19,8 +19,7 @@ st.set_page_config(page_title= "Youtube Data Harvesting and Warehousing ",
 
 # CREATING OPTION MENU
 with st.sidebar:
-    selected = option_menu(None, ["Extract and Transform","View"], 
-                           icons=["house-door-fill","tools","card-text"],
+    selected = option_menu(None, ["Extract and Transform","View"],
                            default_index=0,
                            orientation="vertical",
                            styles={"nav-link": {"font-size": "30px", "text-align": "centre", "margin": "0px", 
@@ -391,6 +390,7 @@ if selected == "View":
                      orientation='v',
                      color=mycursor.column_names[0]
                     )
+        fig.update_traces(marker_color='green')
         st.plotly_chart(fig,use_container_width=True)
         
     elif questions == '8. What are the names of all the channels that have published videos in the year 2022?':
@@ -417,6 +417,7 @@ if selected == "View":
                      orientation='v',
                      color=mycursor.column_names[0]
                     )
+        fig.update_traces(marker_color='red')
         st.plotly_chart(fig,use_container_width=True)
         
     elif questions == '10. Which videos have the highest number of comments, and what are their corresponding channel names?':
@@ -433,5 +434,6 @@ if selected == "View":
                      orientation='v',
                      color=mycursor.column_names[0]
                     )
+        fig.update_traces(marker_color='green')
         st.plotly_chart(fig,use_container_width=True)
 
